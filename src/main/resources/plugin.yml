@@ -1,0 +1,14 @@
+main: net.niccossystem.perfectarena.PerfectArena
+name: PerfectArena
+description: Arena plugin used for NiccosSystem's and irrelevantknight's PvP server
+version: 0.1
+authors: [NiccosSystem, irrelevantknight]
+
+
+commands:
+   arena:
+      description: Join, leave or list arenas
+      aliases: [a, pa]
+   class:
+      description: Choose or list classes
+      aliases: [c, pc]
