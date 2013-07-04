@@ -7,15 +7,14 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.potion.PotionEffect;
 
-
 public abstract class PerfectClass {
-    
+
     /**
      * The name and description of the class
      */
     private String name;
     private String description;
-    
+
     /**
      * The class' armour
      */
@@ -23,71 +22,91 @@ public abstract class PerfectClass {
     private ItemStack chest;
     private ItemStack legs;
     private ItemStack boots;
-    
+
     /**
      * The class' itesm (Like sword, bow, arrows etc.)
      */
     private HashMap<Integer, ItemStack> items;
-    
+
     /**
      * The class' potion effects
      */
     private List<PotionEffect> potionEffects;
-    
+
     /**
      * Give the specified player the class' armour, items and potion effects
      * 
-     * @param player - The player to apply the class to
+     * @param player
+     *            - The player to apply the class to
      */
     public void applyClass(Player player) {
         PlayerInventory pE = player.getInventory();
-        
-        if (helmet != null) pE.setHelmet(helmet);
-        if (chest != null) pE.setChestplate(chest);
-        if (legs != null) pE.setLeggings(legs);
-        if (boots != null) pE.setBoots(boots);
-        
+
+        if (helmet != null) {
+            pE.setHelmet(helmet);
+        }
+        if (chest != null) {
+            pE.setChestplate(chest);
+        }
+        if (legs != null) {
+            pE.setLeggings(legs);
+        }
+        if (boots != null) {
+            pE.setBoots(boots);
+        }
+
         for (int slot : items.keySet()) {
-            if (items.get(slot) == null) continue;            
+            if (items.get(slot) == null) {
+                continue;
+            }
             pE.setItem(slot, items.get(slot));
         }
-        
+
         for (PotionEffect effect : potionEffects) {
-            if (effect == null) continue;
+            if (effect == null) {
+                continue;
+            }
             player.addPotionEffect(effect);
         }
     }
-    
+
     /**
      * Add a potion effect to the class
      * 
-     * @param effect - The potion effect to add
+     * @param effect
+     *            - The potion effect to add
      */
     public void addPotionEffect(PotionEffect effect) {
         potionEffects.add(effect);
     }
-    
+
     /**
      * Add an item to the class
      * 
-     * @param slot - The slot where the {@link ItemStack} should be spawned
-     * @param item - The {@link ItemStack} to add
+     * @param slot
+     *            - The slot where the {@link ItemStack} should be spawned
+     * @param item
+     *            - The {@link ItemStack} to add
      */
     public void addItem(int slot, ItemStack item) {
-        if (slot < 9 || slot > 35)
+        if (slot < 9 || slot > 35) {
             return;
-        
-        if (items.containsKey(slot)) 
+        }
+
+        if (items.containsKey(slot)) {
             return;
-        
+        }
+
         items.put(slot, item);
     }
-    
+
     /**
      * Set an armour piece
      * 
-     * @param armourType - The {@link ArmourType} of the armour piece
-     * @param armourPiece - The {@link ItemStack} the armour piece should be set to
+     * @param armourType
+     *            - The {@link ArmourType} of the armour piece
+     * @param armourPiece
+     *            - The {@link ItemStack} the armour piece should be set to
      */
     public void setArmour(ArmourType armourType, ItemStack armourPiece) {
         if (armourType == ArmourType.HELMET) {
@@ -103,7 +122,7 @@ public abstract class PerfectClass {
             boots = armourPiece;
         }
     }
-    
+
     /**
      * Get the name of the class
      * 
@@ -112,7 +131,7 @@ public abstract class PerfectClass {
     public String getName() {
         return name;
     }
-    
+
     /**
      * Get the description of the class
      * 
