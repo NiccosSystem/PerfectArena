@@ -8,16 +8,16 @@ import net.niccossystem.perfectarena.perfectclass.PerfectClass;
 
 public class PerfectPlayer {
 
-	private final String playerName;
+    private final String playerName;
     private PerfectClass currentClass;
     private PvPArena currentArena;
     private int kills;
     private int deaths;
     private int pvpDeaths;
 	
-	public PerfectPlayer(Player player) {
-		this.playerName = player.getName();
-	}
+    public PerfectPlayer(Player player) {
+        this.playerName = player.getName();
+    }
     
     public void setCurrentArena(PvPArena pvpArena) {
     	this.currentArena = pvpArena;
