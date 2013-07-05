@@ -12,9 +12,9 @@ public class PerfectPlayerSerializer {
         Map<String, String> attributes = new HashMap<String, String>();
         
         String pClass = player.getPerfectClass().getName();
-        String kills = "Kills:" + String.valueOf(player.getKills());
-        String deaths = "Deaths:" + String.valueOf(player.getDeaths());
-        String pvpDeaths = "PvPKills:" + String.valueOf(player.getPvpDeaths());
+        String kills = String.valueOf(player.getKills());
+        String deaths = String.valueOf(player.getDeaths());
+        String pvpDeaths = String.valueOf(player.getPvpDeaths());
         
         attributes.put("Class", pClass);
         attributes.put("Kills", kills);
