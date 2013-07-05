@@ -22,6 +22,17 @@ public abstract class PerfectClass {
     private ItemStack chest;
     private ItemStack legs;
     private ItemStack boots;
+    
+    /**
+     * Construct a PerfectClass
+     * 
+     * @param name - The name of the PerfectClass
+     * @param description - The description of the PerfectClass
+     */
+    protected PerfectClass(String name, String description) {
+        this.name = name;
+        this.description = description;
+    }
 
     /**
      * The class' itesm (Like sword, bow, arrows etc.)
@@ -32,6 +43,21 @@ public abstract class PerfectClass {
      * The class' potion effects
      */
     private List<PotionEffect> potionEffects;
+    
+    /**
+     * Add armour to the class 
+     */
+    protected abstract void generateArmour();
+    
+    /**
+     * Add items to the class
+     */
+    protected abstract void generateItems();
+    
+    /**
+     * Add potion effects to the class
+     */
+    protected abstract void generatePotionEffects();
 
     /**
      * Give the specified player the class' armour, items and potion effects
