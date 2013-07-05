@@ -15,28 +15,40 @@ public class PerfectPlayer {
     private int deaths;
     private int pvpDeaths;
 	
-	public PerfectPlayer(Player p) {
-		player = p.getName();
+	public PerfectPlayer(Player player) {
+		this.player = player.getName();
 	}
     
-    public void setCurrentArena(PvPArena a) {
-    	currentArena = a;
+    public void setCurrentArena(PvPArena pvpArena) {
+    	this.currentArena = pvpArena;
     }
     
-    public void setPerfectClass(PerfectClass c) {
-    	currentClass = c;
+    public void setPerfectClass(PerfectClass pClass) {
+    	this.currentClass = pClass;
     }
     
-    public void setKills(int k) {
-    	kills = k;
+    public void setKills(int kills) {
+    	this.kills = kills;
     }
     
-    public void setDeaths(int d) {
-    	deaths = d;
+    public void incrementKills() {
+        kills++;
     }
     
-    public void setPvpDeaths(int p) {
-    	pvpDeaths = p;
+    public void setDeaths(int deaths) {
+    	this.deaths = deaths;
+    }
+    
+    public void incrementDeaths() {
+        deaths++;
+    }
+    
+    public void setPvpDeaths(int pvpDeaths) {
+    	this.pvpDeaths = pvpDeaths;
+    }
+    
+    public void incrementPvpDeaths() {
+        pvpDeaths++;
     }
     
     public Player getPlayer() {
