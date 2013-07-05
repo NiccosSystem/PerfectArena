@@ -7,13 +7,13 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.potion.PotionEffect;
 
-public abstract class PerfectClass {
+public class PerfectClass {
 
     /**
      * The name and description of the class
      */
-    private String name;
-    private String description;
+    private final String name;
+    private final String description;
 
     /**
      * The class' armour
@@ -22,17 +22,6 @@ public abstract class PerfectClass {
     private ItemStack chest;
     private ItemStack legs;
     private ItemStack boots;
-    
-    /**
-     * Construct a PerfectClass
-     * 
-     * @param name - The name of the PerfectClass
-     * @param description - The description of the PerfectClass
-     */
-    protected PerfectClass(String name, String description) {
-        this.name = name;
-        this.description = description;
-    }
 
     /**
      * The class' itesm (Like sword, bow, arrows etc.)
@@ -43,21 +32,19 @@ public abstract class PerfectClass {
      * The class' potion effects
      */
     private List<PotionEffect> potionEffects;
-    
+
     /**
-     * Add armour to the class 
+     * Construct a PerfectClass
+     * 
+     * @param name
+     *            - The name of the PerfectClass
+     * @param description
+     *            - The description of the PerfectClass
      */
-    protected abstract void generateArmour();
-    
-    /**
-     * Add items to the class
-     */
-    protected abstract void generateItems();
-    
-    /**
-     * Add potion effects to the class
-     */
-    protected abstract void generatePotionEffects();
+    public PerfectClass(String name, String description) {
+        this.name = name;
+        this.description = description;
+    }
 
     /**
      * Give the specified player the class' armour, items and potion effects
@@ -67,12 +54,12 @@ public abstract class PerfectClass {
      */
     public void applyClass(Player player) {
         PlayerInventory pE = player.getInventory();
-        
+
         pE.clear();
         for (PotionEffect effect : player.getActivePotionEffects()) {
-        	player.removePotionEffect(effect.getType());
+            player.removePotionEffect(effect.getType());
         }
-        	
+
         if (helmet != null) {
             pE.setHelmet(helmet);
         }
