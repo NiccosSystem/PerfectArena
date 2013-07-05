@@ -64,7 +64,7 @@ public class PvPArena {
      */
     public void removePlayer(Player player) {
         players.remove(player);
-        player.damage(Integer.MAX_VALUE);
+        player.damage(Double.MAX_VALUE);
     }
 
     public Location getRandomSpawnPoint() {
