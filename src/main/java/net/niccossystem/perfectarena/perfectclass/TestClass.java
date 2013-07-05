@@ -2,7 +2,6 @@ package net.niccossystem.perfectarena.perfectclass;
 
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
-import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
@@ -10,7 +9,7 @@ import org.bukkit.potion.PotionEffectType;
 
 public class TestClass extends PerfectClass {
 
-    public TestClass(Player p) {
+    public TestClass() {
         super("A test class", "Worst class in the world");
         generateArmour();
         generateItems();
