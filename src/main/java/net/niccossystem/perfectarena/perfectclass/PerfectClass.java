@@ -13,7 +13,7 @@ public class PerfectClass {
      * The name and description of the class
      */
     private final String name;
-    private final String description;
+    private String description;
 
     /**
      * The class' armour
@@ -44,6 +44,10 @@ public class PerfectClass {
     public PerfectClass(String name, String description) {
         this.name = name;
         this.description = description;
+    }
+
+    public PerfectClass(String name) {
+        this.name = name;
     }
 
     /**
@@ -157,5 +161,9 @@ public class PerfectClass {
      */
     public String getDescription() {
         return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }
