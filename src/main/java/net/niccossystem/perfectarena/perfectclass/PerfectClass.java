@@ -67,7 +67,12 @@ public abstract class PerfectClass {
      */
     public void applyClass(Player player) {
         PlayerInventory pE = player.getInventory();
-
+        
+        pE.clear();
+        for (PotionEffect effect : player.getActivePotionEffects()) {
+        	player.removePotionEffect(effect.getType());
+        }
+        	
         if (helmet != null) {
             pE.setHelmet(helmet);
         }
