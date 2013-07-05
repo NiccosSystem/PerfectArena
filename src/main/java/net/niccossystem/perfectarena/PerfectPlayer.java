@@ -8,7 +8,7 @@ import net.niccossystem.perfectarena.perfectclass.PerfectClass;
 
 public class PerfectPlayer {
 
-	private final String player;
+	private final String playerName;
     private PerfectClass currentClass;
     private PvPArena currentArena;
     private int kills;
@@ -16,7 +16,7 @@ public class PerfectPlayer {
     private int pvpDeaths;
 	
 	public PerfectPlayer(Player player) {
-		this.player = player.getName();
+		this.playerName = player.getName();
 	}
     
     public void setCurrentArena(PvPArena pvpArena) {
@@ -52,7 +52,7 @@ public class PerfectPlayer {
     }
     
     public Player getPlayer() {
-    	return Bukkit.getServer().getPlayer(player);
+    	return Bukkit.getServer().getPlayer(playerName);
     }
     
     public PvPArena getCurrentArena() {
@@ -73,5 +73,9 @@ public class PerfectPlayer {
     
     public int getPvpDeaths() {
     	return pvpDeaths;
+    }
+    
+    public String getName() {
+        return playerName;
     }
 }
