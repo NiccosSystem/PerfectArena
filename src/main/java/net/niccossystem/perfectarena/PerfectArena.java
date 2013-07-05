@@ -15,11 +15,13 @@ public class PerfectArena extends JavaPlugin {
     @Override
     public void onEnable() {
         Bukkit.getPluginManager().registerEvents(new PlayerQuitListener(), this);
+        getLogger().info(getDescription().getName() + " version " + 
+        		getDescription().getVersion() + " has been enabled");
     }
 
     @Override
     public void onDisable() {
-
+    	getLogger().info(getDescription().getName() + " has been disabled");
     }
 
     public void removePlayer(Player player) {
