@@ -7,9 +7,9 @@ import net.niccossystem.perfectarena.player.PerfectPlayer;
 import org.bukkit.entity.Player;
 
 public class PerfectPlayerSerializer {
-    
+
     private final PerfectArena plugin;
-    
+
     public PerfectPlayerSerializer(PerfectArena instance) {
         plugin = instance;
     }
