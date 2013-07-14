@@ -1,6 +1,6 @@
 package net.niccossystem.perfectarena.serialize;
 
-import java.util.ArrayList;
+import java.util.List;
 import net.niccossystem.perfectarena.perfectclass.ArmourType;
 import net.niccossystem.perfectarena.perfectclass.PerfectClass;
 import org.bukkit.enchantments.Enchantment;
@@ -10,7 +10,7 @@ import org.bukkit.potion.PotionEffectType;
 
 public class PerfectClassSerializer {
 
-    public static PerfectClass deserialize(String name, ArrayList<String> serialized) {
+    public static PerfectClass deserialize(String name, List<String> serialized) {
         PerfectClass pClass = new PerfectClass(name);
 
         String description = "";

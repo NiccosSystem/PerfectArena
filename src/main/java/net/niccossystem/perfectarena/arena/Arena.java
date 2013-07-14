@@ -6,14 +6,14 @@ import java.util.Random;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 
-public class PvPArena {
+public class Arena {
 
     private final List<Location> spawnPoints;
     private final String name;
     private final String description;
     private final List<Player> players;
 
-    public PvPArena(List<Location> spawnPoints, String name, String description) {
+    public Arena(List<Location> spawnPoints, String name, String description) {
         this.spawnPoints = spawnPoints;
         this.name = name;
         this.description = description;

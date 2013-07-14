@@ -1,6 +1,6 @@
-package net.niccossystem.perfectarena;
+package net.niccossystem.perfectarena.player;
 
-import net.niccossystem.perfectarena.arena.PvPArena;
+import net.niccossystem.perfectarena.arena.Arena;
 import net.niccossystem.perfectarena.perfectclass.PerfectClass;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -9,7 +9,7 @@ public class PerfectPlayer {
 
     private final String playerName;
     private PerfectClass currentClass;
-    private PvPArena currentArena;
+    private Arena currentArena;
     private int kills;
     private int deaths;
     private int pvpDeaths;
@@ -18,7 +18,7 @@ public class PerfectPlayer {
         playerName = player.getName();
     }
 
-    public void setCurrentArena(PvPArena pvpArena) {
+    public void setCurrentArena(Arena pvpArena) {
         currentArena = pvpArena;
     }
 
@@ -54,7 +54,7 @@ public class PerfectPlayer {
         return Bukkit.getServer().getPlayer(playerName);
     }
 
-    public PvPArena getCurrentArena() {
+    public Arena getCurrentArena() {
         return currentArena;
     }
 

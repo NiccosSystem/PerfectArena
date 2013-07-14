@@ -2,10 +2,17 @@ package net.niccossystem.perfectarena.serialize;
 
 import java.util.HashMap;
 import java.util.Map;
-import net.niccossystem.perfectarena.PerfectPlayer;
+import net.niccossystem.perfectarena.PerfectArena;
+import net.niccossystem.perfectarena.player.PerfectPlayer;
 import org.bukkit.entity.Player;
 
 public class PerfectPlayerSerializer {
+    
+    private final PerfectArena plugin;
+    
+    public PerfectPlayerSerializer(PerfectArena instance) {
+        plugin = instance;
+    }
 
     public Map<String, String> serialize(PerfectPlayer player) {
         Map<String, String> attributes = new HashMap<String, String>();
@@ -26,7 +33,7 @@ public class PerfectPlayerSerializer {
     public PerfectPlayer deserialize(Player player, Map<String, String> attributes) {
         PerfectPlayer deserializedPlayer = new PerfectPlayer(player);
 
-        //deserializedPlayer.setPerfectClass(attributes.get("Class"));
+        deserializedPlayer.setPerfectClass(plugin.getClassHandler().getClassByName(attributes.get("Class")));
         deserializedPlayer.setKills(Integer.parseInt(attributes.get("Kills")));
         deserializedPlayer.setDeaths(Integer.parseInt(attributes.get("Deaths")));
         deserializedPlayer.setPvpDeaths(Integer.parseInt(attributes.get("PvPKills")));
